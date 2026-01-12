@@ -62,13 +62,13 @@ class HeartDiseaseLoader:
         if self.data is None:
             raise ValueError("Brak danych. Najpierw uruchom load_clean_data().")
 
-        X = self.data.drop(columns=["target"])
+        x = self.data.drop(columns=["target"])
         y = self.data["target"].astype(int)  # 0..4
 
         strat = y if stratify else None
 
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
-            X, y,
+            x, y,
             test_size=0.25,
             random_state=42,
             stratify=strat
@@ -81,9 +81,9 @@ class HeartDiseaseLoader:
         if self.X_train is None or self.X_test is None:
             raise ValueError("Brak podziału train/test. Najpierw uruchom prepare_data().")
 
-        X_train_std = self.scaler.fit_transform(self.X_train)
-        X_test_std = self.scaler.transform(self.X_test)
-        return X_train_std, X_test_std
+        x_train_std = self.scaler.fit_transform(self.X_train)
+        x_test_std = self.scaler.transform(self.X_test)
+        return x_train_std, x_test_std
 
     def print_data_summary(self):
         """Wyświetla sformatowane informacje o zbiorze w terminalu."""

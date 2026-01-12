@@ -1,0 +1,13 @@
+Raport klasyfikacji dla Naive_Bayes
+==================================================
+              precision    recall  f1-score   support
+
+     Stage 0       0.84      0.78      0.81        40
+     Stage 1       0.21      0.21      0.21        14
+     Stage 2       0.06      0.11      0.08         9
+     Stage 3       0.17      0.11      0.13         9
+     Stage 4       0.00      0.00      0.00         3
+
+    accuracy                           0.48        75
+   macro avg       0.26      0.24      0.25        75
+weighted avg       0.51      0.48      0.50        75
