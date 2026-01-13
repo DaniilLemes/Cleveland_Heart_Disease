@@ -1,6 +1,7 @@
 from heart_disease_loader.loader import HeartDiseaseLoader
 from bayes.nb_classifier import NaiveBayesModel
 from svm.svm_classifier import SVMModel
+from random_forest.rf_classifier import RandomForestModel
 
 
 def main():
@@ -15,10 +16,19 @@ def main():
     # nb_model.plot_diagnostics(X_train, y_train, X_test, y_test)
 
     # --- SVM ---
-    svm_model = SVMModel(res_folder="results_svm")
-    svm_model.train(X_train, y_train)
-    svm_model.evaluate(X_test, y_test)
-    svm_model.plot_diagnostics(X_train, y_train, X_test, y_test)
+    # svm_model = SVMModel(res_folder="results_svm")
+    # svm_model.train(X_train, y_train)
+    # svm_model.evaluate(X_test, y_test)
+    # svm_model.plot_diagnostics(X_train, y_train, X_test, y_test)
+
+    # --- RANDOM FOREST ----
+    rf_model = RandomForestModel(res_folder="results_rf")
+    rf_model.train(X_train, y_train, tune=True)  # tune=False, jeśli chcesz szybciej
+    rf_model.evaluate(X_test, y_test)
+    rf_model.plot_diagnostics(X_train, y_train, X_test, y_test)
+
+    # opcjonalnie (ładne do raportu):
+    rf_model.plot_feature_importance(feature_names=list(X_train.columns), top_n=13)
 
 
 if __name__ == "__main__":
