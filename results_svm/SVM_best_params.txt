@@ -1,0 +1,5 @@
+Best params:
+{'svc__C': 0.1, 'svc__gamma': 'scale', 'svc__kernel': 'linear'}
+
+Best CV score (f1_macro):
+0.361340467500526

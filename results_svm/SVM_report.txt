@@ -1,0 +1,13 @@
+Raport klasyfikacji dla SVM
+==================================================
+              precision    recall  f1-score   support
+
+     Stage 0       0.84      0.80      0.82        40
+     Stage 1       0.31      0.29      0.30        14
+     Stage 2       0.11      0.11      0.11         9
+     Stage 3       0.33      0.22      0.27         9
+     Stage 4       0.11      0.33      0.17         3
+
+    accuracy                           0.53        75
+   macro avg       0.34      0.35      0.33        75
+weighted avg       0.56      0.53      0.54        75
